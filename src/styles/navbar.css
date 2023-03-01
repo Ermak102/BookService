@@ -1,0 +1,64 @@
+.header{
+    width: 100%;
+    background-color: #fff;
+
+    box-shadow: 0px 0px 5px 2px  #c7c7c7;
+
+    position: relative;
+    z-index: 100;
+}
+
+.menu {
+  line-height: 2.35rem;
+}
+
+.menu__wrapper,
+.menu__links,
+.menu__link-reg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu__logo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu__link:not(:last-child){
+    padding-right: 1rem;
+}
+
+.link, 
+.link-active {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+
+  transition: color .3s ease-in-out;
+}
+
+.link:not(:last-child){
+  padding-right: 1rem;
+}
+
+.link-active{
+  color: rgb(0, 153, 255);
+  padding-right: 1rem;
+}
+
+.image__wrapper{
+  width: 2rem;
+  height: 2rem;
+  padding-top: 0.3rem;
+}
+
+.logo__img{
+  max-width: 100%;
+}
+
+.menu__login__title{
+  cursor: pointer;
+}

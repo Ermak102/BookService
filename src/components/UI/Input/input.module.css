@@ -1,0 +1,102 @@
+.input{
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+
+    outline: none;
+    font-size: 0.85rem;
+
+    border-radius: 0.5rem;
+    border: 2px solid #a3a2a2;
+
+    transition: border .3s ease-in-out;
+}
+
+.input.success{
+    border: 2px solid #1eff01;
+}
+
+.input.error{
+    border: 2px solid #ff0000;
+}
+
+/* InputWithInnerLabel */
+
+.inputLabel {
+    position: relative;
+}
+
+.inputLabel .label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    padding: 0px 1rem;
+    
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+
+    pointer-events: none; 
+    transform-origin: 0 0;
+    transition: all .2s ease;
+    transform: translate3d(0, 0, 0);
+}
+
+.inputLabel .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left; 
+}
+
+.inputLabel .inputWithLabel {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    min-height: 3.5rem;
+    background: rgba(0, 0, 0, 0.02);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+
+    border: 0;
+
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: inherit;
+
+    padding: 1rem 0.75rem 0 0.75rem;
+
+    color: #000;
+    transition: all .15s ease;
+}
+
+.inputLabel .inputWithLabel:hover {
+    background: rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5); 
+}
+
+.inputLabel .inputWithLabel:not(:placeholder-shown) + .label {
+    color: rgba(0, 0, 0, 0.5);
+    transform: translate3d(0, -12px, 0) scale(0.75); 
+}
+
+.inputLabel .inputWithLabel:focus {
+    background: rgba(0, 0, 0, 0.05);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #0077FF; 
+}
+
+.inputLabel .inputWithLabel:focus + .label {
+    color: #0077FF;
+    transform: translate3d(0, -1.1rem, 0) scale(0.75);
+ }
+          
+.inputLabel .inputWithLabel:focus + .label + .focus {
+    transform: scaleX(1);
+    transition: all .1s ease;
+}

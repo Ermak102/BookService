@@ -1,0 +1,14 @@
+.reg{
+}
+
+.reg__title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+
+    margin: 2rem 0rem;
+}
+
+.reg__user input{
+    margin: 1rem 0rem;
+}

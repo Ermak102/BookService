@@ -1,0 +1,14 @@
+.login__title{
+    text-align: center;
+    padding: 1.2rem 0rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.login__wrapper input{
+    margin-bottom: 2rem;
+}
+
+.login__wrapper button{
+    margin: auto;
+}
