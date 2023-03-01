@@ -1,6 +1,3 @@
-.reg{
-}
-
 .reg__title{
     font-size: 1.5rem;
     font-weight: 600;
@@ -9,6 +6,15 @@
     margin: 2rem 0rem;
 }
 
-.reg__user input{
+.reg__content input{
     margin: 1rem 0rem;
+}
+
+.reg__btns{
+    width: 100%;
+    margin-top: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Input from "../UI/Input/Input";
+import InputLabel from "../UI/Input/InputLabel";
 
 const RegAddress = () => {
   const [address, setAddress] = useState({
@@ -13,43 +13,43 @@ const RegAddress = () => {
 
   return (
     <div className="reg__user__address">
-      <Input
+      <InputLabel
+        name="Индекс"
         type="text"
-        placeholder="Индекс"
         value={address.postcode}
         onChange={(e) => setAddress({ ...address, postcode: e.target.value })}
       />
-      <Input
+      <InputLabel
+        name="Город"
         type="text"
-        placeholder="Город"
         value={address.city}
         onChange={(e) => setAddress({ ...address, city: e.target.value })}
       />
-      <Input
+      <InputLabel
+        name="Улица"
         type="text"
-        placeholder="Улица"
         value={address.street}
         onChange={(e) => setAddress({ ...address, street: e.target.value })}
       />
-      <Input
+      <InputLabel
+        name="Номер дома"
         type="text"
-        placeholder="Номер дома"
         value={address.houseNumber}
         onChange={(e) =>
           setAddress({ ...address, houseNumber: e.target.value })
         }
       />
-      <Input
+      <InputLabel
+        name="Номер строения"
         type="text"
-        placeholder="Номер строения"
         value={address.buildingNumber}
         onChange={(e) =>
           setAddress({ ...address, buildingNumber: e.target.value })
         }
       />
-      <Input
+      <InputLabel
+        name="Номер квартиры"
         type="text"
-        placeholder="Номер квартиры"
         value={address.apartmentNumber}
         onChange={(e) =>
           setAddress({ ...address, apartmentNumber: e.target.value })
