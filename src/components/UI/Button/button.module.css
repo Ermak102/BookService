@@ -6,10 +6,19 @@
     border: 1px solid #000;
     background-color: transparent;
 
-    transition: background .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .button:hover{
     background-color: #000;
     color: #fff;
+}
+
+.button:disabled{
+    border: 1px solid rgba(189, 186, 186, 0.9)
+}
+
+.button:disabled:hover{
+    background-color: transparent;
+    color: rgba(189, 186, 186, 0.9)
 }

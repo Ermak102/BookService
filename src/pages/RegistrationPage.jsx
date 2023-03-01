@@ -14,8 +14,18 @@ const RegistrationPage = () => {
         <div className="reg__content">
           {page === 0 ? <RegUser /> : <RegAddress />}
           <div className="reg__btns">
-            <Button onClick={() => setPage(0)}>Назад</Button>
-            <Button onClick={() => setPage(1)}>Вперед</Button>
+            <Button
+              onClick={() => setPage(0)}
+              disabled={page === 0 ? true : false}
+            >
+              Назад
+            </Button>
+            <Button
+              onClick={() => setPage(1)}
+              disabled={page === 1 ? true : false}
+            >
+              Вперед
+            </Button>
           </div>
         </div>
       </div>

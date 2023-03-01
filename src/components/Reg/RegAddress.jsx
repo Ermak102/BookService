@@ -14,25 +14,25 @@ const RegAddress = () => {
   return (
     <div className="reg__user__address">
       <InputLabel
-        name="Индекс"
+        placeholder="Индекс"
         type="text"
         value={address.postcode}
         onChange={(e) => setAddress({ ...address, postcode: e.target.value })}
       />
       <InputLabel
-        name="Город"
+        placeholder="Город"
         type="text"
         value={address.city}
         onChange={(e) => setAddress({ ...address, city: e.target.value })}
       />
       <InputLabel
-        name="Улица"
+        placeholder="Улица"
         type="text"
         value={address.street}
         onChange={(e) => setAddress({ ...address, street: e.target.value })}
       />
       <InputLabel
-        name="Номер дома"
+        placeholder="Номер дома"
         type="text"
         value={address.houseNumber}
         onChange={(e) =>
@@ -40,7 +40,7 @@ const RegAddress = () => {
         }
       />
       <InputLabel
-        name="Номер строения"
+        placeholder="Номер строения"
         type="text"
         value={address.buildingNumber}
         onChange={(e) =>
@@ -48,7 +48,7 @@ const RegAddress = () => {
         }
       />
       <InputLabel
-        name="Номер квартиры"
+        placeholder="Номер квартиры"
         type="text"
         value={address.apartmentNumber}
         onChange={(e) =>

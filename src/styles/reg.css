@@ -18,3 +18,16 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.message{
+    margin-top: 1rem;
+    font-size: 0.75rem;
+}
+
+.message__default{
+    color: rgba(0, 0, 0, 0.452);
+}
+
+.message__error{
+    color: rgb(255, 0, 0);
+}

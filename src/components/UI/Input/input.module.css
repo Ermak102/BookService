@@ -91,6 +91,14 @@
     box-shadow: inset 0 -2px 0 #0077FF; 
 }
 
+.inputLabel .error:focus {
+    box-shadow: inset 0 -2px 0 rgb(255, 0, 0); 
+}
+
+.inputLabel .success:focus {
+    box-shadow: inset 0 -2px 0 rgb(0, 255, 0); 
+}
+
 .inputLabel .inputWithLabel:focus + .label {
     color: #0077FF;
     transform: translate3d(0, -1.1rem, 0) scale(0.75);
