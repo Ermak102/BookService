@@ -15,9 +15,19 @@ export const useInput = (initialValue, validators) => {
     setExit(true);
   };
 
+  const isValid = () => {
+    if (valid.errorMessage.length > 0) {
+      return "error";
+    }
+
+    return "success";
+  };
+
   return {
     value,
+    setValue,
     isExit,
+    isValid,
     onChange,
     onExitEnter,
     ...valid,

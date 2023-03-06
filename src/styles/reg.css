@@ -1,3 +1,7 @@
+.reg{
+    margin: 3rem 0;
+}
+
 .reg__title{
     font-size: 1.5rem;
     font-weight: 600;
@@ -10,13 +14,13 @@
     margin: 1rem 0rem;
 }
 
-.reg__btns{
+.reg__form__btn{
     width: 100%;
     margin-top: 2rem;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .message{
@@ -30,4 +34,56 @@
 
 .message__error{
     color: rgb(255, 0, 0);
+}
+
+.user__upload__img{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 3rem 0;
+}
+
+.user__img__wrapper{
+    width: 6rem;
+    height: 6rem;
+
+    margin: 1rem 0;
+}
+
+.user__img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.user__fields__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user__field-surname{
+    width: 60%;
+}
+
+.user__field-name{
+    width: 37%;
+}
+
+.reg__confirmation{
+    display: flex;
+    align-items: center;
+}
+
+.confirmation__title{
+    font-size: .85rem;
+    margin-left: 1rem;
+}
+
+.reg__btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }

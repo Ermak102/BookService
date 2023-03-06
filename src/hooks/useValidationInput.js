@@ -28,7 +28,7 @@ export const useValidationInput = (value, validators) => {
         case "minLength":
           if (value.length < validators[validator]) {
             setErrorMessage(
-              `Длина поля должна быть более ${validators[validator]} символов !`
+              `Длина поля должна быть не менее ${validators[validator]} символов !`
             );
             return;
           }
@@ -37,7 +37,7 @@ export const useValidationInput = (value, validators) => {
           break;
 
         case "cyrillic":
-          if (!/^[\u0400-\u04FF]+$/.test(value)) {
+          if (!/^[\u0400-\u04FF]+$/.test(value) && value) {
             setErrorMessage("Доступна только кириллица!");
             return;
           }
@@ -87,6 +87,48 @@ export const useValidationInput = (value, validators) => {
 
           if (!checkNumber.test(value)) {
             setErrorMessage("Строка должна содеражть хотя бы одну цифру!");
+            return;
+          }
+
+          setErrorMessage("");
+          break;
+
+        case "onlyNumber":
+          if (!value.match(/^\d+$/)) {
+            setErrorMessage("Строка должна состоять исключительно из цифр!");
+            return;
+          }
+
+          setErrorMessage("");
+          break;
+
+        case "street":
+          if (!value.match(/^[\u0400-\u04FF\0-9\-]+$/)) {
+            setErrorMessage(
+              "Строка может включать только: кириллицу, тире, цифры"
+            );
+            return;
+          }
+
+          setErrorMessage("");
+          break;
+
+        case "houseNumber":
+          if (!value.match(/^[1-9][0-9]*([а-я]|(\/[1-9][0-9]*))?$/i)) {
+            setErrorMessage(
+              "Строка может содержать цифры и только одну букву кириллицы (11а)!"
+            );
+            return;
+          }
+
+          setErrorMessage("");
+          break;
+
+        case "buildingNumber":
+          if (!value.match(/^(\d?[1-9])[\u0400-\u04FF]?$/) && value) {
+            setErrorMessage(
+              "Строка может содержать число до двух знаков и одну букву кириллицы!"
+            );
             return;
           }
 

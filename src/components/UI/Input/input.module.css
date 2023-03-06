@@ -54,7 +54,7 @@
     transform-origin: left; 
 }
 
-.inputLabel .inputWithLabel {
+.inputWithLabel {
     -webkit-appearance: none;
     appearance: none;
 
@@ -75,10 +75,30 @@
     transition: all .15s ease;
 }
 
+
+.inputLabel .error {
+    box-shadow: inset 0 -2px 0 rgb(255, 0, 0);
+}
+
+.inputLabel .success {
+    box-shadow: inset 0 -2px 0 rgb(0, 255, 0); 
+}
+
 .inputLabel .inputWithLabel:hover {
     background: rgba(0, 0, 0, 0.04);
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5); 
 }
+
+.inputLabel .success:hover {
+    background: rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0 -2px 0 rgb(0, 255, 0);
+}
+
+.inputLabel .error:hover {
+    background: rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0 -2px 0 rgb(255, 0, 0);
+}
+
 
 .inputLabel .inputWithLabel:not(:placeholder-shown) + .label {
     color: rgba(0, 0, 0, 0.5);
@@ -89,14 +109,6 @@
     background: rgba(0, 0, 0, 0.05);
     outline: none;
     box-shadow: inset 0 -2px 0 #0077FF; 
-}
-
-.inputLabel .error:focus {
-    box-shadow: inset 0 -2px 0 rgb(255, 0, 0); 
-}
-
-.inputLabel .success:focus {
-    box-shadow: inset 0 -2px 0 rgb(0, 255, 0); 
 }
 
 .inputLabel .inputWithLabel:focus + .label {
