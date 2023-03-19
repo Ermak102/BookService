@@ -16,6 +16,10 @@ public class UserInfo implements Serializable {
     private UUID id;
     private String firstname;
     private String lastname;
+<<<<<<< Updated upstream
+=======
+    private String username;
+>>>>>>> Stashed changes
     private String email;
 }
 

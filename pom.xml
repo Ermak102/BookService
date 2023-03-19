@@ -86,7 +86,10 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
+<<<<<<< Updated upstream
 			<version>1.0.0.GA</version>
+=======
+>>>>>>> Stashed changes
 		</dependency>
 
 	</dependencies>

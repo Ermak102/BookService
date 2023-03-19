@@ -1,6 +1,9 @@
 package com.psuti.Mironov.entity;
 
+<<<<<<< Updated upstream
 import com.psuti.Mironov.entity.example.User;
+=======
+>>>>>>> Stashed changes
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

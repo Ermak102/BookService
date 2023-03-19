@@ -1,12 +1,19 @@
 package com.psuti.Mironov.controller;
 
+<<<<<<< Updated upstream
 import com.psuti.Mironov.dao.UserRepository;
 import com.psuti.Mironov.entity.example.User;
+=======
+import com.psuti.Mironov.entity.User;
+>>>>>>> Stashed changes
 import com.psuti.Mironov.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+<<<<<<< Updated upstream
 import javax.persistence.EntityExistsException;
+=======
+>>>>>>> Stashed changes
 import java.util.List;
 import java.util.UUID;
 

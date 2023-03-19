@@ -1,6 +1,10 @@
 package com.psuti.Mironov.service;
 
+<<<<<<< Updated upstream
 import com.psuti.Mironov.entity.example.User;
+=======
+import com.psuti.Mironov.entity.User;
+>>>>>>> Stashed changes
 
 import java.util.List;
 import java.util.UUID;

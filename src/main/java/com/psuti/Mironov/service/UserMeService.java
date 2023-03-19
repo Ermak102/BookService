@@ -2,7 +2,11 @@ package com.psuti.Mironov.service;
 
 import com.psuti.Mironov.dto.UpdateDto;
 import com.psuti.Mironov.dto.UserInfo;
+<<<<<<< Updated upstream
 import com.psuti.Mironov.entity.example.User;
+=======
+import com.psuti.Mironov.entity.User;
+>>>>>>> Stashed changes
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -39,6 +43,10 @@ public class UserMeService{
         return new UserInfo(user.getId(),
                 user.getFirstname(),
                 user.getLastname(),
+<<<<<<< Updated upstream
+=======
+                user.getUsername(),
+>>>>>>> Stashed changes
                 user.getEmail()
         );
     }

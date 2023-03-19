@@ -3,7 +3,11 @@ package com.psuti.Mironov.service;
 
 import com.psuti.Mironov.dao.TokenRepository;
 import com.psuti.Mironov.dao.UserRepository;
+<<<<<<< Updated upstream
 import com.psuti.Mironov.entity.example.User;
+=======
+import com.psuti.Mironov.entity.User;
+>>>>>>> Stashed changes
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;

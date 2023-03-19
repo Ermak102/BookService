@@ -1,7 +1,11 @@
 package com.psuti.Mironov.service.security;
 
 
+<<<<<<< Updated upstream
 import com.psuti.Mironov.entity.example.User;
+=======
+import com.psuti.Mironov.entity.User;
+>>>>>>> Stashed changes
 import com.psuti.Mironov.service.UserCrudService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
