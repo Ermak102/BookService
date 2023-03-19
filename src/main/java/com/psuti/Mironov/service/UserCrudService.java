@@ -1,7 +1,7 @@
 package com.psuti.Mironov.service;
 
-import com.psuti.Mironov.entity.example.User;
 
+import com.psuti.Mironov.entity.User;
 import java.util.List;
 import java.util.UUID;
 

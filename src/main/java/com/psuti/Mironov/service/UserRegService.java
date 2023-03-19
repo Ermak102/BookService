@@ -4,7 +4,7 @@ import com.psuti.Mironov.dao.RoleRepository;
 import com.psuti.Mironov.dto.AuthDto;
 import com.psuti.Mironov.dto.RegDto;
 import com.psuti.Mironov.entity.Token;
-import com.psuti.Mironov.entity.example.User;
+import com.psuti.Mironov.entity.User;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityExistsException;

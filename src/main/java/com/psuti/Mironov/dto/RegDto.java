@@ -16,6 +16,7 @@ import java.util.UUID;
 public class RegDto extends AuthDto {
     private String firstname;
     private String lastname;
+    private String username;
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private UUID id;
 }

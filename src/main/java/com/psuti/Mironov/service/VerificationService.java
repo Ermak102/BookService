@@ -2,7 +2,7 @@ package com.psuti.Mironov.service;
 
 
 import com.psuti.Mironov.entity.VerificationToken;
-import com.psuti.Mironov.entity.example.User;
+import com.psuti.Mironov.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;

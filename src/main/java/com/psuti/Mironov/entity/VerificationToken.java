@@ -1,6 +1,6 @@
 package com.psuti.Mironov.entity;
 
-import com.psuti.Mironov.entity.example.User;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

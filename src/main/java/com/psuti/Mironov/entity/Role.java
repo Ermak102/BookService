@@ -1,4 +1,4 @@
-package com.psuti.Mironov.entity.example;
+package com.psuti.Mironov.entity;
 
 
 import lombok.Getter;

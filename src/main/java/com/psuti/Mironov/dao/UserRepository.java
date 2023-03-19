@@ -1,6 +1,7 @@
 package com.psuti.Mironov.dao;
 
-import com.psuti.Mironov.entity.example.User;
+
+import com.psuti.Mironov.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,7 +1,7 @@
 package com.psuti.Mironov.service.security;
 
 
-import com.psuti.Mironov.entity.example.User;
+import com.psuti.Mironov.entity.User;
 import com.psuti.Mironov.service.UserCrudService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
