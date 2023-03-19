@@ -20,21 +20,25 @@ public class ExchangeList {
     private UUID idExchangeList;
 
 
-//    @OneToOne(targetEntity = OfferList.class, fetch = FetchType.EAGER)
-//    @JoinColumn(name="idOfferList1")
-//    private OfferList offerList1;
-//
-//    @OneToOne(targetEntity = WishList.class, fetch = FetchType.EAGER)
-//    @JoinColumn(name="idWishList1")
-//    private WishList wishList1;
-//
-//    @OneToOne(targetEntity = OfferList.class, fetch = FetchType.EAGER)
-//    @JoinColumn(name="idOfferList2")
-//    private OfferList offerList2;
-//
-//    @OneToOne(targetEntity = WishList.class, fetch = FetchType.EAGER)
-//    @JoinColumn(name="idWishList2")
-//    private WishList wishList2;
+    //TODO Repair relations
+    //FIXME 1..1 OfL, 1..1 WL
+    //DONE
+
+    @OneToOne(targetEntity = OfferList.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="idofferlist1")
+    private OfferList offerList1;
+
+    @OneToOne(targetEntity = WishList.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="idwishlist1")
+    private WishList wishList1;
+
+    @OneToOne(targetEntity = OfferList.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="idofferlist2")
+    private OfferList offerList2;
+
+    @OneToOne(targetEntity = WishList.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="idwishlist2")
+    private WishList wishList2;
 
 
     @Column (name="createatdate")

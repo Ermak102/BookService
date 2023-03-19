@@ -21,4 +21,11 @@ public class Category {
 
     @Column (name="multiselect")
     private Boolean MultiSelect = false;
+
+    @ManyToOne
+    @JoinColumn(name="idparent")
+    private Category category;
+
+
+    //TODO DAO + DTO + REST CONTROLLER
 }

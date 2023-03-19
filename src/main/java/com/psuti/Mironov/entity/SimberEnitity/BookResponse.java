@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -29,13 +30,15 @@ public class BookResponse {
     @Column(nullable=false,length = 50, name = "note")
     private String Note;
 
+    //TODO repair relations of BR with BL and User. BL be n..1 , User n..1
+    //DONE
 
-//    @OneToOne(targetEntity = BookLiterature.class, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "idBookLiterature")
-//    private BookLiterature bookLiterature;
-//
-//    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-//    @JoinColumn(nullable = false, name = "Id_User")
-//    private User user;
+    @ManyToOne(targetEntity = BookLiterature.class, fetch = FetchType.EAGER)
+    @JoinColumn(name = "idbookliterature")
+    private BookLiterature bookLiterature;
+
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "id_user")
+    private User user;
 
 }

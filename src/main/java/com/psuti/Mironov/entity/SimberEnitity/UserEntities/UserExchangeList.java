@@ -1,6 +1,8 @@
-package com.psuti.Mironov.entity.SimberEnitity;
+package com.psuti.Mironov.entity.SimberEnitity.UserEntities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.psuti.Mironov.entity.SimberEnitity.ExchangeList;
+import com.psuti.Mironov.entity.SimberEnitity.OfferList;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,13 +19,17 @@ public class UserExchangeList {
     @Column(name="id_userexchangelist", nullable = false)
     private UUID Id_UserExchangeList;
 
-//    @OneToOne(targetEntity = ExchangeList.class, fetch = FetchType.EAGER)
-//    @JoinColumn(name="idExchangeList")
-//    private ExchangeList exchangeList;
-//
-//    @OneToOne(targetEntity = OfferList.class, fetch = FetchType.EAGER)
-//    @JoinColumn(name="idOfferList")
-//    private OfferList offerList;
+    //TODO repair relations
+    //FIXME 1..M EL, 1..1 OfL
+    //DONE
+
+    @ManyToOne(targetEntity = ExchangeList.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="idexchangelist")
+    private ExchangeList exchangeList;
+
+    @OneToOne(targetEntity = OfferList.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="idofferlist")
+    private OfferList offerList;
 
     @Column(nullable = false, length = 20, name = "tracknumber")
     private String TrackNumber;

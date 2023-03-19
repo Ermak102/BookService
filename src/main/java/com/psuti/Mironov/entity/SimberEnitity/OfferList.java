@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -36,16 +37,19 @@ public class OfferList {
     @Column (name="updateattime")
     private Time UpdateAtTime;
 
+    //TODO repair relations with OfL and BL, User, Status
+    //FIXME OfL n..1 BL, User 1..n, Status 1..n
 
-//    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-//    @JoinColumn(nullable = false, name = "Id_User")
-//    private User user;
-//
-//    @OneToOne(targetEntity = BookLiterature.class, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "idBookLiterature")
-//    private BookLiterature bookLiterature;
-//
-//    @ManyToOne()
-//    @JoinColumn(nullable = false, name = "idStatus")
-//    private Status status;
+
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "id_user")
+    private User user;
+
+    @OneToMany(targetEntity = BookLiterature.class, fetch = FetchType.EAGER)
+    @JoinColumn(name = "idbookliterature")
+    private List<BookLiterature> bookLiteratures;
+
+    @ManyToOne()
+    @JoinColumn(nullable = false, name = "idstatus")
+    private Status status;
 }

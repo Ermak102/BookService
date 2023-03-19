@@ -25,9 +25,12 @@ public class BookLiterature {
     @Column(nullable=false,length = 50, name = "note")
     private String Note;
 
-//
-//    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-//    @ManyToOne
-//    @JoinColumn(name = "idAuthor")
-//    private Author author;
+
+    //TODO: repair relations between BL and Author
+    //DONE
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @ManyToOne
+    @JoinColumn(name = "idauthor")
+    private Author author;
 }
