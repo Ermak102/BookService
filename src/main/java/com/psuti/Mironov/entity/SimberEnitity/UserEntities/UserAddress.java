@@ -1,4 +1,4 @@
-package com.psuti.Mironov.entity.SimberEnitity;
+package com.psuti.Mironov.entity.SimberEnitity.UserEntities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -33,9 +34,14 @@ public class UserAddress implements Serializable {
     @Column(nullable = false, length = 15, name = "addrapartment")
     private String AddrApartment;
 
-//    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-//    @JoinColumn(nullable = false, name = "id_user")
-//    private User user;
+
+    //TODO repair relations with UA and User
+    //FIXME OfL n..1 BL, User 1..n, Status 1..n
+    //DONE
+
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "id_user")
+    private User user;
 
     @JsonIgnore
     @Column(name="isdefault")

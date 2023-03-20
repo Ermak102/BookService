@@ -1,5 +1,6 @@
-package com.psuti.Mironov.entity.SimberEnitity;
+package com.psuti.Mironov.entity.SimberEnitity.UserEntities;
 
+import com.psuti.Mironov.entity.SimberEnitity.Status;
 import com.psuti.Mironov.entity.User;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,19 +31,23 @@ public class UserMessage {
 
     @Column (name="createatdate")
     private Date CreatedAtDate;
-//    @Column (name="updatedatdate")
-//    private Date UpdateAtDate;
+    @Column (name="updatedatdate")
+    private Date UpdateAtDate;
 
     @Column (name="createattime")
     private Time CreatedAtTime;
-//    @Column (name="updatedattime")
-//    private Time UpdateAtTime;
+    @Column (name="updatedattime")
+    private Time UpdateAtTime;
 
-//    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-//    @JoinColumn(nullable = false, name = "Id_User")
-//    private User user;
-//
-//    @ManyToOne()
-//    @JoinColumn(nullable = false, name = "idStatus")
-//    private Status status;
+    //TODO Repair relations and columns
+    //FIXME N..1 User, N..1 Status
+    //DONE
+
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "id_user")
+    private User user;
+
+    @ManyToOne()
+    @JoinColumn(nullable = false, name = "idstatus")
+    private Status status;
 }

@@ -1,11 +1,11 @@
-package com.psuti.Mironov.entity.SimberEnitity;
+package com.psuti.Mironov.entity.SimberEnitity.UserEntities;
 
 
+import com.psuti.Mironov.entity.SimberEnitity.Category;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -17,12 +17,13 @@ public class UserValueCategory {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_uservaluecategory", nullable = false)
     private UUID Id_UserValueCategory;
-//
-//    @OneToMany
-//    @JoinColumn(name="Id_UserList")
-//    private List<UserList> userLists;
-//
-//    @ManyToOne
-//    @JoinColumn(name="idCategory")
-//    private Category category;
+
+    //FIXME 1..1 Category, 1..M UserList
+    @ManyToOne
+    @JoinColumn(name="id_userlist")
+    private UserList userLists;
+
+    @OneToOne
+    @JoinColumn(name="idcategory")
+    private Category category;
 }

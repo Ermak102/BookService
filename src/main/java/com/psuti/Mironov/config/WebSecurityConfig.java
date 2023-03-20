@@ -49,21 +49,12 @@ public class WebSecurityConfig {
                                 .antMatchers(HttpMethod.PUT,"/users/*").hasRole("ADMIN")
                                 .antMatchers(HttpMethod.PUT,"/users/*").hasRole("MODERATOR")
 
-                                .antMatchers(HttpMethod.POST,"/books").hasRole("ADMIN")
-                                .antMatchers(HttpMethod.POST,"/books").hasRole("MODERATOR")
-                                .antMatchers(HttpMethod.PUT,"/books*").hasRole("ADMIN")
-                                .antMatchers(HttpMethod.PUT,"/books*").hasRole("MODERATOR")
-
                                 .antMatchers(HttpMethod.DELETE,"/users/*").hasRole("ADMIN")
                                 .antMatchers(HttpMethod.DELETE,"/users/*").hasRole("MODERATOR")
-                                .antMatchers(HttpMethod.DELETE,"/books/*").hasRole("ADMIN")
-                                .antMatchers(HttpMethod.DELETE,"/books/*").hasRole("MODERATOR")
 
                                 .antMatchers(HttpMethod.GET,"/users").permitAll()
                                 .antMatchers(HttpMethod.GET,"/users/*").permitAll()
 
-                                .antMatchers(HttpMethod.GET,"/books").permitAll()
-                                .antMatchers(HttpMethod.GET,"/books/*").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .logout(logout -> logout

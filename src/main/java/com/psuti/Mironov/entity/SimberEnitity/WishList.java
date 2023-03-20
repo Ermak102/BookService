@@ -1,5 +1,6 @@
 package com.psuti.Mironov.entity.SimberEnitity;
 
+import com.psuti.Mironov.entity.SimberEnitity.UserEntities.UserAddress;
 import com.psuti.Mironov.entity.User;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,8 +20,8 @@ public class WishList {
     @Column(name = "idwishlist", nullable = false)
     private UUID idWishList;
 
-//    @Column (name="yearpublishing")
-//    private Date YearPublishing;
+    @Column (name="yearpublishing")
+    private Date YearPublishing;
 
     @Column (name="createatdate")
     private Date CreatedAtDate;
@@ -33,16 +34,20 @@ public class WishList {
     private Time UpdateAtTime;
 
 
-//    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-//    @JoinColumn(nullable = false, name = "Id_User")
-//    private User user;
-//
-//    @OneToOne()
-//    @JoinColumn(nullable = false, name = "Id_UserAddress")
-//    private UserAddress userAddress;
-//
-//    @ManyToOne()
-//    @JoinColumn(nullable = false, name = "idStatus")
-//    private Status status;
+    //TODO Repair relations
+    //FIXME 1..1 User, N..1 UserAddress, N..1 Status
+    //DONE
+
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "id_user")
+    private User user;
+
+    @ManyToOne()
+    @JoinColumn(nullable = false, name = "id_useraddress")
+    private UserAddress userAddress;
+
+    @ManyToOne()
+    @JoinColumn(nullable = false, name = "idstatus")
+    private Status status;
 }
 
