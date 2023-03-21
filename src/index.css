@@ -9,7 +9,27 @@ html{
 }
 
 .container{
-    max-width: 960px;
+    max-width: 1085px;
     padding: 0 1rem;
     margin: 0 auto;
+}
+
+.container__horizontal {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+      
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+@keyframes printed-text {
+    from{
+        width: 0;
+        text-shadow: none;
+    }
 }

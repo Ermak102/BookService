@@ -1,7 +1,7 @@
 import React from "react";
-import RegAddressFrom from "./RegAddressForm";
-import RegUserForm from "./RegUserForm";
-import UserUploadImg from "./UserUploadImg";
+import RegAddressFrom from "./Address/RegAddressForm";
+import RegUserForm from "./User/RegUserForm";
+import UserUploadImg from "./User/UserUploadImg";
 
 const RegUser = ({ user, address }) => {
   return (

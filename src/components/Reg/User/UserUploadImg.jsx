@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputFile from "../UI/Input/InputFile";
+import InputFile from "../../UI/Input/InputFile";
 
 const UserUploadImg = () => {
   const [userImg, setUserImg] = useState("./img/user/defaultImg.png");
