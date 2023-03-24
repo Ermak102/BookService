@@ -1,8 +1,6 @@
 package com.psuti.Mironov.controller.SimberController;
 
-import com.psuti.Mironov.dao.SimberDAO.BookLiteratureRepository;
 import com.psuti.Mironov.dao.SimberDAO.WishListRepository;
-import com.psuti.Mironov.entity.SimberEnitity.BookLiterature;
 import com.psuti.Mironov.entity.SimberEnitity.WishList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +27,8 @@ public class WishListRestController {
     }
 
     @GetMapping("/{id}")
-    public WishList getById (@PathVariable("id") UUID idofferlist){
-        return wishListRepository.findById(idofferlist).get();
+    public WishList getById(@PathVariable("id") UUID idwishlist) {
+        return wishListRepository.findById(idwishlist).get();
     }
 
     @PutMapping
@@ -47,7 +45,7 @@ public class WishListRestController {
     }
 
     @DeleteMapping("/{id}")
-    public void remove (@PathVariable("id") UUID idofferlist){
-        wishListRepository.deleteById(idofferlist);
+    public void remove(@PathVariable("id") UUID idwishlist) {
+        wishListRepository.deleteById(idwishlist);
     }
 }
