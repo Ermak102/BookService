@@ -35,19 +35,19 @@ public class User implements Serializable {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false, length = 25, name="username")
+    @Column(length = 25, name = "username")
     private String username;
 
-    @Column(nullable = false, unique = true)
+    @Column
     private int rating;
 
-    @Column(nullable = false, unique = true)
+    @Column
     private Time created_at_time;
 
-    @Column(nullable = false, unique = true)
+    @Column
     private Date created_at_date;
 
-    @Column(nullable = false, unique = true)
+    @Column
     private byte[] avatar;
 
     @JsonIgnore
