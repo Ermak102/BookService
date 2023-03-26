@@ -4,6 +4,7 @@ import RegUser from "../components/Reg/RegUser";
 import Button from "../components/UI/Button/Button";
 import { useInput } from "../hooks/useInput";
 import { useValidForm } from "../hooks/useValidForm";
+import { useNavigate } from "react-router-dom";
 import {
   emailField,
   nameField,
@@ -20,10 +21,23 @@ import {
   postcodeField,
   streetField,
 } from "../components/Reg/Address/RegAddressFields";
+import { useContext } from "react";
+import { Context } from "..";
+import Error from "../components/UI/Error/Error";
+import { observer } from "mobx-react-lite";
+import Loader from "../components/UI/Loader/Loader";
 
-const RegistrationPage = () => {
+const RegistrationPage = observer(() => {
   const [checked, setChecked] = useState(false);
   const [validForm, setValidForm] = useState(true);
+
+  const navigate = useNavigate();
+
+  const { authStore } = useContext(Context);
+
+  useEffect(() => {
+    authStore.setErrors(null);
+  }, []);
 
   const user = {
     surname: useInput("", surnameField),
@@ -50,9 +64,20 @@ const RegistrationPage = () => {
     setValidForm(!isValidAddress || !isValidUser || !checked);
   }, [isValidUser, isValidAddress, checked]);
 
-  const registration = () => {
-    console.log("User", user);
-    console.log("Address", address);
+  const registration = async () => {
+    const newUser = {
+      firstname: user.name.value,
+      lastname: user.surname.value,
+      username: user.nikName.value,
+      email: user.email.value,
+      password: user.password.value,
+    };
+
+    await authStore.registration(newUser);
+
+    if (authStore.errors === null) {
+      navigate("/confirm");
+    }
   };
 
   return (
@@ -70,8 +95,18 @@ const RegistrationPage = () => {
               Нажимая эту кнопку, вы подтверждаете... и даёте согласие
             </div>
           </div>
+          <Error message={authStore.errors} />
+          {authStore.isLoading === true ? (
+            <Loader backgroundInvisible={false} />
+          ) : (
+            ""
+          )}
+
           <div className="reg__btn">
-            <Button onClick={() => registration()} disabled={validForm}>
+            <Button
+              onClick={() => registration()}
+              disabled={validForm || authStore.isLoading}
+            >
               Зарегистрироваться
             </Button>
           </div>
@@ -79,6 +114,6 @@ const RegistrationPage = () => {
       </div>
     </div>
   );
-};
+});
 
 export default RegistrationPage;

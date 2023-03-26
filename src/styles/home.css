@@ -17,7 +17,7 @@
 .main__section{
     width: 100vw;
     height: 100vh;
-    scroll-snap-align: center;
+    scroll-snap-align: end;
     
     display: flex;
     justify-content: center;
@@ -30,6 +30,8 @@
     display: block;
     overflow-y: scroll;
     overflow-x: hidden;
+
+    scroll-snap-type: both;
 }
 
 .main__section:last-child{
@@ -44,6 +46,8 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
+
+    scroll-snap-align: start;
 
     position: relative;
     z-index: 5;
@@ -188,6 +192,8 @@
 .main__ability{
     padding: 4rem 0;
     background-color: #fff;
+    scroll-snap-align: end;
+
 }
 
 

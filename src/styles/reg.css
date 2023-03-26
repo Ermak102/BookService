@@ -1,5 +1,6 @@
 .reg{
-    margin: 3rem 0;
+    position: relative;
+    padding: 3rem 0;
 }
 
 .reg__title{

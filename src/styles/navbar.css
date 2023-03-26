@@ -20,11 +20,20 @@
     justify-content: space-between;
 }
 
-.menu__logo{
+.menu__logo a{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
+    text-decoration: none;
+    color: #000;
+
+    transition: filter .3s ease-in-out;
+}
+
+.menu__logo a:hover{
+  filter: contrast(1.2);
 }
 
 .menu__link:not(:last-child){

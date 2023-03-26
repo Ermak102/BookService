@@ -45,7 +45,7 @@ const RegUserForm = ({ user }) => {
         field={user.password}
         onChange={(e) => user.password.onChange(e)}
         placeholder="Пароль"
-        type="password"
+        inputType="password"
       />
     </form>
   );

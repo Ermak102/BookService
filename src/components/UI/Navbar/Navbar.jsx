@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "./Link";
 import "../../../styles/navbar.css";
-import Modal from "../Modal/Modal";
-import Login from "../../Login";
+import { observer } from "mobx-react-lite";
+import { Context } from "../../..";
+import RegistrationLinks from "./RegistrationLinks";
+import userStore from "../../../store/user";
 
-const Navbar = () => {
-  const [modal, setModal] = useState(false);
+const Navbar = observer(() => {
+  const { authStore } = useContext(Context);
 
   return (
     <header className="header">
@@ -13,14 +15,16 @@ const Navbar = () => {
         <div className="container">
           <div className="menu__wrapper">
             <div className="menu__logo">
-              <div className="image__wrapper">
-                <img
-                  className="logo__img"
-                  src="./img/header/logo.png"
-                  alt="logo"
-                />
-              </div>
-              <div className="logo">Сервис по обмену книг</div>
+              <Link path={"/"}>
+                <div className="image__wrapper">
+                  <img
+                    className="logo__img"
+                    src="./img/header/logo.png"
+                    alt="logo"
+                  />
+                </div>
+                <div className="logo">Сервис по обмену книг</div>
+              </Link>
             </div>
             <div className="menu__links">
               <Link path={"/"} activeStyle="link-active" defaultStyle={"link"}>
@@ -34,7 +38,7 @@ const Navbar = () => {
                 Начать обмен
               </Link>
               <Link
-                path={"/my-trade"}
+                path={"/myTrade"}
                 activeStyle="link-active"
                 defaultStyle={"link"}
               >
@@ -48,26 +52,23 @@ const Navbar = () => {
                 Задать вопрос
               </Link>
             </div>
-            <div className="menu__link-reg">
+
+            {authStore.isAuth ? (
               <Link
-                path={"/reg"}
+                path={"/user"}
                 activeStyle="link-active"
                 defaultStyle={"link"}
               >
-                Регистрация
+                {userStore.user.firstname}
               </Link>
-              <div className="menu__login" onClick={() => setModal(!modal)}>
-                <span className="menu__login__title">Авторизация</span>
-                <Modal visible={modal} setVisible={setModal}>
-                  <Login />
-                </Modal>
-              </div>
-            </div>
+            ) : (
+              <RegistrationLinks />
+            )}
           </div>
         </div>
       </nav>
     </header>
   );
-};
+});
 
 export default Navbar;
