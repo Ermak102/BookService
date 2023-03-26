@@ -2,6 +2,7 @@ package com.psuti.Mironov.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.psuti.Mironov.entity.SimberEnitity.UserEntities.UserAddress;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -16,11 +18,16 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
+
+    public User() {
+    }
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private UUID id;
-    @Column(nullable = false, length = 25,name = "first_name")
+    @Column(nullable = false, length = 25, name = "first_name")
     private String firstname;
     @Column(nullable = false, length = 25, name = "last_name")
     private String lastname;
@@ -37,6 +44,7 @@ public class User implements Serializable {
 
     @Column(length = 25, name = "username")
     private String username;
+
 
     @Column
     private int rating;
