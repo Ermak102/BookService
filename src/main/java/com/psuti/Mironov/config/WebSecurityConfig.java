@@ -38,6 +38,7 @@ public class WebSecurityConfig {
     @Bean
     SecurityFilterChain web(HttpSecurity http, SuccessLogoutHandlerImpl successLogoutHandler) throws Exception {
         http
+                .cors().and()
                 .csrf()
                 .disable()
                 .authorizeHttpRequests(
