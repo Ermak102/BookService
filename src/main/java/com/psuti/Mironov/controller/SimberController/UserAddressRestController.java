@@ -32,7 +32,7 @@ public class UserAddressRestController {
         return userAddressRepository.findById(id_useraddress).get();
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public UserAddress update (@RequestBody UserAddress userAddress){
         if(userAddressRepository.existsById (userAddress.getId_UserAddress())) {
             return userAddressRepository.save(userAddress);
