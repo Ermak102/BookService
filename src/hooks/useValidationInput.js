@@ -45,6 +45,24 @@ export const useValidationInput = (value, validators) => {
           setErrorMessage("");
           break;
 
+        case "cyrillicAndLatin":
+          if (!/^([а-яё\s]+|[a-z\s]+)$/iu.test(value) && value) {
+            setErrorMessage("Доступна только кириллица или латиница");
+            return;
+          }
+
+          setErrorMessage("");
+          break;
+
+        case "onlyNumberAndTire":
+          if (!value.match(/^[\d\-]+$/)) {
+            setErrorMessage("Доступны только цифры и тире");
+            return;
+          }
+
+          setErrorMessage("");
+          break;
+
         case "email":
           const email =
             /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;

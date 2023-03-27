@@ -1,0 +1,17 @@
+.trade__book{
+    width: 60%;
+}
+
+.trade__book input{
+    margin-bottom: 2rem;
+}
+
+.book__author--surname,
+.book__parameters--isbn{
+    width: 60%;
+}
+
+.book__author--name,
+.book__parameters--year{
+    width: 35%;
+}
