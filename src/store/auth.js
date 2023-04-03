@@ -32,7 +32,7 @@ export default class AuthStore {
       this.setErrors(null);
     } catch (e) {
       console.log(e);
-      this.setErrors(e.message);
+      this.setErrors("Вы не зарегистрированы!");
     } finally {
       this.setLoading(false);
     }
@@ -46,7 +46,8 @@ export default class AuthStore {
       console.log(response);
       this.setErrors(null);
     } catch (e) {
-      this.setErrors(e.message);
+      console.log(e);
+      this.setErrors(e.response.data.message);
     } finally {
       this.setLoading(false);
     }
@@ -59,7 +60,18 @@ export default class AuthStore {
       this.setErrors(null);
       this.setAuth(true);
     } catch (e) {
-      this.setErrors(e.message);
+      this.setErrors(e.response.data.message);
+    }
+  }
+
+  async logout() {
+    try {
+      const response = await AuthService.logout();
+      localStorage.removeItem("userToken");
+      console.log(response);
+      this.setAuth(false);
+    } catch (e) {
+      this.setErrors(e.response.data.message);
     }
   }
 }

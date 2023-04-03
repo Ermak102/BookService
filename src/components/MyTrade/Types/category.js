@@ -1,22 +1,48 @@
 export const genre = [
-  "детектив",
-  "детские книги",
-  "история",
-  "мемуары",
-  "приключения",
-  "психология",
-  "фантастика",
-  "эзотерика",
+  { name: "детектив" },
+  { name: "детские книги" },
+  { name: "история" },
+  { name: "мемуары" },
+  { name: "приключения" },
+  { name: "психология" },
+  { name: "фантастика" },
+  { name: "эзотерика" },
 ];
 
-export const science = ["1", "2", "3"];
+export const science = [
+  { name: "Математика" },
+  { name: "Логика" },
+  { name: "Естествознание" },
+  { name: "Техническая" },
+  { name: "Социальные" },
+  { name: "Гуманитарные" },
+  { name: "Информатика" },
+];
 
-export const condition = ["отличное", "нормальное", "ужасное"];
+export const condition = [
+  { name: "отличное" },
+  { name: "нормальное" },
+  { name: "ужасное" },
+];
 
-export const cover = ["1", "2", "3"];
+export const cover = [
+  { name: "Твердая" },
+  { name: "Мягкая" },
+  { name: "Твердая тканевая" },
+  { name: "Кожаная обложка" },
+];
 
-export const laureate = ["1", "2", "3"];
+export const laureate = [
+  { name: "1 степени" },
+  { name: "2 степени" },
+  { name: "3 степени" },
+  { name: "нет" },
+];
 
-export const screening = ["1", "2"];
+export const screening = [{ name: "да" }, { name: "нет" }];
 
-export const language = ["Русский", "Английский"];
+export const language = [
+  { name: "Русский" },
+  { name: "Английский" },
+  { name: "Другой" },
+];

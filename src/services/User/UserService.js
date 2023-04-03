@@ -1,4 +1,4 @@
-import userApi from "./index";
+import userApi from "../index";
 
 export default class UserService {
   static async getUser() {

@@ -55,11 +55,22 @@ const Navbar = observer(() => {
 
             {authStore.isAuth ? (
               <Link
-                path={"/user"}
+                path={"/myTrade"}
                 activeStyle="link-active"
                 defaultStyle={"link"}
               >
-                {userStore.user.firstname}
+                <div className="user__link">
+                  <div className="link__img">
+                    <img
+                      src={
+                        userStore.user?.img
+                          ? userStore.user.img
+                          : "./img/user/defaultimg.png"
+                      }
+                    />
+                  </div>
+                  <div className="user__name">{userStore?.user?.firstname}</div>
+                </div>
               </Link>
             ) : (
               <RegistrationLinks />

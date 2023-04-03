@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const API_URL = "http://localhost:8080/auth";
+export const API_URL = "http://localhost:8080/";
 
 const authApi = axios.create({
-  withCredentials: true,
+  withCredentials: false,
   baseURL: API_URL,
 });
 

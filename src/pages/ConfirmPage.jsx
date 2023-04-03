@@ -12,15 +12,26 @@ const ConfirmPage = observer(() => {
   const navigate = useNavigate();
   const [confirmation, setConfirmation] = useState("");
 
-  const confirm = async (e) => {
-    e.preventDefault();
+  function doubleClick() {
+    let counterClick = 1;
 
-    await authStore.confirmation(confirmation);
+    return async function confirm(e) {
+      e.preventDefault();
 
-    if (authStore.errors === null) {
-      navigate("/myTrade");
-    }
-  };
+      await authStore.confirmation(confirmation);
+
+      if (authStore.errors === null) {
+        navigate("/myTrade");
+      }
+
+      if (counterClick === 1) {
+        counterClick++;
+        confirm(e);
+      }
+    };
+  }
+
+  const confirmationClick = doubleClick();
 
   return (
     <div className="confirmation">
@@ -28,7 +39,6 @@ const ConfirmPage = observer(() => {
       <div className="confirmation__wrapper">
         <div className="confirmation__description">
           Введите верификационный код, отправленный на Вашу почту
-          <span>{authStore.user.email}</span>
         </div>
         <form className="confirmation__form">
           <input
@@ -41,7 +51,12 @@ const ConfirmPage = observer(() => {
           {<Error message={authStore.errors} />}
 
           <div className="confirmation__btn">
-            <Button onClick={(e) => confirm(e)}>Подтвердить</Button>
+            <Button
+              disabled={!confirmation}
+              onClick={(e) => confirmationClick(e)}
+            >
+              Подтвердить
+            </Button>
           </div>
         </form>
       </div>

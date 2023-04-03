@@ -13,7 +13,7 @@ const App = observer(() => {
 
   useEffect(() => {
     authorization();
-  }, []);
+  }, [authStore.isAuth]);
 
   const authorization = async () => {
     if (localStorage.getItem("userToken") == null) {
@@ -21,12 +21,13 @@ const App = observer(() => {
     }
 
     await userStore.getUser();
+    console.log(userStore.user);
 
-    if (userStore.user !== {}) authStore.setAuth(true);
+    if (userStore.user !== null) authStore.setAuth(true);
   };
 
   if (userStore.isLoading) {
-    return <div />;
+    return <Loader />;
   }
 
   return (

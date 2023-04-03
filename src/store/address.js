@@ -1,6 +1,5 @@
 import { makeAutoObservable } from "mobx";
 import AddressService from "../services/AddressService";
-import AuthService from "../services/AuthService";
 
 export default class AddressStore {
   address = {};

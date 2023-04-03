@@ -8,7 +8,6 @@ import {
   publicationYearField,
   surnameField,
 } from "../components/MyTrade/Types/book";
-import RegInput from "../components/Reg/RegInput";
 import { useInput } from "../hooks/useInput";
 import "../styles/trade.css";
 

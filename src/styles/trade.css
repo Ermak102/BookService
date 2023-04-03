@@ -50,7 +50,7 @@
 
 .trade__change__wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .flex-line{

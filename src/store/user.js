@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 import UserService from "../services/User/UserService";
 
 class UserStore {
-  user = {};
+  user = null;
   errors = null;
   isLoading = false;
 
