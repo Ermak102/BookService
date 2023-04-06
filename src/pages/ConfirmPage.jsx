@@ -5,6 +5,8 @@ import { Context } from "..";
 import Button from "../components/UI/Button/Button";
 import Error from "../components/UI/Error/Error";
 import "../styles/confirmation.css";
+import AddressStore from "../store/address";
+import UserStore from "../store/user";
 
 const ConfirmPage = observer(() => {
   const { authStore } = useContext(Context);
@@ -22,6 +24,7 @@ const ConfirmPage = observer(() => {
 
       if (authStore.errors === null) {
         navigate("/myTrade");
+        addAddress();
       }
 
       if (counterClick === 1) {
@@ -30,6 +33,19 @@ const ConfirmPage = observer(() => {
       }
     };
   }
+
+  const addAddress = async () => {
+    if (AddressStore.address === null) {
+      return;
+    }
+
+    if (UserStore.user === null) {
+      await UserStore.getUser();
+    }
+
+    console.log(UserStore.user.id, AddressStore.address);
+    AddressStore.createAddress(UserStore.user.id, AddressStore.address);
+  };
 
   const confirmationClick = doubleClick();
 

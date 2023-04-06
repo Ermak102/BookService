@@ -10,14 +10,14 @@ export const useListChecked = (list) => {
 };
 
 const useChecked = (initialState = false) => {
-  const [checked, setChecked] = useState(initialState);
+  const [isChecked, setChecked] = useState(initialState);
 
   const onChange = () => {
-    setChecked(!checked);
+    setChecked(!isChecked);
   };
 
   return {
-    checked,
+    isChecked,
     onChange,
   };
 };

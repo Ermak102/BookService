@@ -55,7 +55,7 @@ export const useValidationInput = (value, validators) => {
           break;
 
         case "onlyNumberAndTire":
-          if (!value.match(/^[\d\-]+$/)) {
+          if (!value.match(/^[\d\-]+$/) && value) {
             setErrorMessage("Доступны только цифры и тире");
             return;
           }
@@ -147,6 +147,15 @@ export const useValidationInput = (value, validators) => {
             setErrorMessage(
               "Строка может содержать число до двух знаков и одну букву кириллицы!"
             );
+            return;
+          }
+
+          setErrorMessage("");
+          break;
+
+        case "Date":
+          if (value > new Date().getFullYear()) {
+            setErrorMessage("Дата издания не может быть больше текущего года");
             return;
           }
 

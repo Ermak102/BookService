@@ -26,6 +26,7 @@ import { Context } from "..";
 import Error from "../components/UI/Error/Error";
 import { observer } from "mobx-react-lite";
 import Loader from "../components/UI/Loader/Loader";
+import AddressStore from "../store/address";
 
 const RegistrationPage = observer(() => {
   const [checked, setChecked] = useState(false);
@@ -77,7 +78,20 @@ const RegistrationPage = observer(() => {
 
     if (authStore.errors === null) {
       navigate("/confirm");
+      addAddressToStore();
     }
+  };
+
+  const addAddressToStore = () => {
+    const newAddress = {
+      addrHouse: address.houseNumber.value,
+      addrIndex: address.postcode.value,
+      addrCity: address.city.value,
+      addrStreet: address.street.value,
+      addrApartment: address.apartmentNumber.value,
+    };
+
+    AddressStore.setAddress(newAddress);
   };
 
   return (

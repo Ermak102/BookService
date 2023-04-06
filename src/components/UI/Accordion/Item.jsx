@@ -1,26 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Checkbox from "./Checkbox";
 
-const Item = ({ title, list, id }) => {
-  const [counterClick, setCounter] = useState(1);
-  const [visible, setVisible] = useState(true);
-
-  const doubleClick = () => {
-    setCounter(counterClick + 1);
-
-    setVisible(true);
-
-    if (counterClick === 2) {
-      setVisible(false);
-      setCounter(1);
-    }
-  };
-
+const Item = ({ title, list, id, click, visible }) => {
   return (
     <div
       className="accordion__item"
       id={`category${id}`}
-      onClick={(e) => doubleClick()}
+      onClick={() => click(id)}
     >
       <a
         className="accordion__link"

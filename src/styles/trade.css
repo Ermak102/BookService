@@ -1,5 +1,6 @@
 .trade{
     margin-top: 2rem;
+    position: relative;
 }
 
 .trade__title{
@@ -25,17 +26,13 @@
     width: 30%;
     background-color: rgb(224, 224, 224);
 
-    cursor: pointer;
-
     transition: .3s ease-in-out;
 }
 
-.trade__navigation--item:hover,
-.trade__navigation--item .active{
+.trade__navigation .active{
     background-color: transparent;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -5px;
-    -webkit-text-stroke: 1px #282828;
-    text-shadow: 0px 0px 1px #282828;
+    font-weight: 600;
     color: #000;
 }
 
@@ -46,9 +43,10 @@
 
 .trade__item__content{
     padding-top: 4rem;
+    height: 30rem;
 }
 
-.trade__change__wrapper{
+.exchange{
     display: flex;
     justify-content: space-around;
 }
@@ -59,3 +57,46 @@
     align-items: center;
 }
 
+.trade__pagination{
+   margin-top: 3rem;
+   width: 100%;
+}
+
+.pagination__btns{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.page__get .book__category{
+    margin: 0 auto;
+}
+
+.page__get .accordion{
+    overflow: revert;
+    height: auto;
+    padding: 0;
+}
+
+.trade__delivery{
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery__address {
+    width: 50%;
+}
+
+.delivery__user {
+    width: 45%;
+}
+
+.delivery__address .block__wrapper{
+    display: block;
+}
+
+.trade .block__wrapper .user__field-index, 
+.trade .block__wrapper .user__field-city,
+.trade .block__wrapper .user__field-street{
+    width: 100%;
+}

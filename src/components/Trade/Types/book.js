@@ -22,4 +22,6 @@ export const isbnField = {
 export const publicationYearField = {
   isEmpty: true,
   onlyNumber: true,
+  maxLength: 4,
+  Date: true,
 };

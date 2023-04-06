@@ -22,6 +22,7 @@ class MessageStore {
     try {
       const response = MessageService.send(message, userId);
       console.log(response);
+      this.setErrors(null);
     } catch (e) {
       this.setErrors(e.response.data.message);
     } finally {

@@ -122,10 +122,6 @@
     }
 }
 
-::-webkit-scrollbar{
-    display: none;
-}
-
 .section-second .main__wrapper{
     align-items: end;
     justify-content: center;
@@ -258,4 +254,8 @@
 .ability__body{
     margin-top: 1rem;
     color: #000000ce;
+}
+
+::-webkit-scrollbar{
+    display: none;
 }

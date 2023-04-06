@@ -9,7 +9,7 @@ import Error from "./UI/Error/Error";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
 
-const Login = observer(({ setVisible }) => {
+const Login = observer(() => {
   const email = useInput("", emailField);
   const password = useInput("", passwordField);
 
@@ -27,7 +27,6 @@ const Login = observer(({ setVisible }) => {
 
     if (authStore.errors === null) {
       navigate("/myTrade");
-      setVisible(false);
     }
   };
 

@@ -1,6 +1,6 @@
 import React from "react";
-import RegInput from "../Reg/RegInput";
-import "../../styles/trade-author.css";
+import RegInput from "../../Reg/RegInput";
+import "../../../styles/trade-author.css";
 
 const AuthorForm = ({ author }) => {
   return (

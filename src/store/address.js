@@ -1,8 +1,8 @@
 import { makeAutoObservable } from "mobx";
 import AddressService from "../services/AddressService";
 
-export default class AddressStore {
-  address = {};
+class AddressStore {
+  address = null;
   isLoading = false;
   errors = null;
 
@@ -23,15 +23,19 @@ export default class AddressStore {
   }
 
   async createAddress(userId, address) {
-    this.setLoading(false);
-
+    this.setLoading(true);
     try {
       const response = await AddressService.createAddress(userId, address);
       console.log(response);
-      this.setAddress({ ...address, id: response.data.userId });
+      this.setAddress(response.data);
       this.setErrors(null);
     } catch (e) {
+      console.log(e);
       this.setErrors(e.message);
+    } finally {
+      this.setLoading(false);
     }
   }
 }
+
+export default new AddressStore();

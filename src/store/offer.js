@@ -1,8 +1,8 @@
 import { makeAutoObservable } from "mobx";
-import UserService from "../services/User/UserService";
+import OfferService from "../services/Trade/OfferService";
 
-class UserStore {
-  user = null;
+class OfferStore {
+  offer = null;
   errors = null;
   isLoading = false;
 
@@ -10,8 +10,8 @@ class UserStore {
     makeAutoObservable(this);
   }
 
-  setUser(user) {
-    this.user = user;
+  setOffer(offer) {
+    this.offer = offer;
   }
 
   setErrors(error) {
@@ -22,19 +22,20 @@ class UserStore {
     this.isLoading = loading;
   }
 
-  async getUser() {
+  async createOffer(offer, idBook, idUser) {
     this.setLoading(true);
     try {
-      const response = await UserService.getUser();
-      this.setUser(response.data);
+      const response = await OfferService.createOffer(offer, idBook, idUser);
+      console.log(response);
+      this.setOffer(response.data);
       this.setErrors(null);
     } catch (e) {
       console.log(e);
-      this.setErrors(e.message);
+      this.setErrors(e.data?.message);
     } finally {
       this.setLoading(false);
     }
   }
 }
 
-export default new UserStore();
+export default new OfferStore();

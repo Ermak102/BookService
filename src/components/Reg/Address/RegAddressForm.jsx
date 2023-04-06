@@ -36,7 +36,7 @@ const RegAddressForm = ({ address }) => {
 
   return (
     <div className="reg__user__address">
-      <div className="user__fields__wrapper">
+      <div className="user__fields__wrapper block__wrapper">
         <div className="user__field-index">
           <RegInput
             field={address.postcode}

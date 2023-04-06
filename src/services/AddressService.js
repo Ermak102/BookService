@@ -1,10 +1,11 @@
-import axios from "axios";
-import { API_URL } from "./index";
-
-const URL = API_URL + "/address";
+import authApi, { API_URL } from "./index";
 
 export default class AddressService {
   static async createAddress(userId, address) {
-    return axios(URL + "/create", { ...address, userId: userId });
+    const newAddress = {
+      ...address,
+      user: { id: userId },
+    };
+    return authApi.post(API_URL + "address", newAddress);
   }
 }
