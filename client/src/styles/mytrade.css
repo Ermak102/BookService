@@ -1,0 +1,148 @@
+.wrapper__myTrade{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.myTrade__sidebar{
+    width: 30%;
+    height: 100%;
+    margin-top: 2%;
+}
+
+.myTrade__user{
+    width: 30%;
+    display: block;
+    padding: 10px 10px;
+}
+
+.myTrade__sidebar Button{
+    display: block;
+    width: 60%;
+    padding: 10px 10px;
+    
+}
+
+.myTrade__content{
+    width: 70%;
+    height: 100%;
+}
+
+.content{
+  text-align: center;
+}
+
+
+.body__content{
+    margin-top: 2%;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.myTrade__content {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+    margin: 0 auto;
+  }
+  .myTrade__content .card {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    background: #fff;
+    text-shadow: 0 15px 60px rgba(0, 0, 0, .5);
+  }
+  .myTrade__content .card .face {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .myTrade__content .card .face.face1 {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .myTrade__content .card .face.face1 h2 {
+    margin: 0;
+    padding: 0;
+  }
+  .myTrade__content .card .face.face2 {
+    background: #111;
+    transition: .5s;
+  }
+  .myTrade__content .card:first-child .face.face2 {
+    background: linear-gradient(45deg,  #000, #fff);
+  }
+  .myTrade__content .card:nth-child(2) .face.face2 {
+    background: linear-gradient(45deg, #000, #fff);
+  }
+  .myTrade__content .card:last-child .face.face2 {
+    background: linear-gradient(45deg,  #000, #fff);
+  }
+  .myTrade__content .card:hover .face.face2 {
+    height: 75px;
+  }
+  .myTrade__content .card .face.face2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+  }
+  .myTrade__content .card .face.face2 h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  }
+  .myTrade__content .card:hover .face.face2 h2 {
+    font-size: 16px;
+  }
+
+
+
+
+.wrapper__personalData{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 2%;
+}
+.wrapper__personalData Input{
+  display: block;
+  width: 100%;
+  pointer-events: none;
+}
+.wrapper__personalData Button{
+  margin-top: 10%;
+  display: flex;	
+  justify-content: center;
+}
+
+.formTrackNumber{
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.formTrackNumber Button{
+  width: 220px;
+}
