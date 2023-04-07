@@ -1,0 +1,12 @@
+.message{
+    margin-top: 1rem;
+    font-size: 0.75rem;
+}
+
+.default{
+    color: rgba(0, 0, 0, 0.452);
+}
+
+.error{
+    color: rgb(255, 0, 0);
+}

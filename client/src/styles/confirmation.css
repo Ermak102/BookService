@@ -1,0 +1,42 @@
+.confirmation{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+.confirmation__name{
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 2rem 0;
+}
+
+.confirmation__description{
+    font-size: 1rem;
+}
+
+.confirmation__description span{
+    font-weight: 600;
+    padding-left: 1rem;
+}
+
+.confirmation__form{
+    margin-top: 2rem;
+}
+
+.confirmation__btn{
+    margin: 1rem 0;
+}
+
+.confirmation__btn button{
+    margin: 0 auto;
+}
+
+.confirmation__input{
+    width: 100%;
+
+    padding: 0.6rem 0.5rem;
+}
